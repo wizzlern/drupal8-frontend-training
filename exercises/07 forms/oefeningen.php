@@ -7,8 +7,8 @@
 // Voeg een contactformulier aan de pagina toe.
 // - Schakel de Contactmodule in en voeg een veld voor telefoonnummer aan het
 //   Feedback-formulier toe.
-// - Schakel de Contact Block-module in en plaats een blok met het Feedback-
-//   formulier op de voorpagina.
+// - Download en installeer de Contact Block-module. Plaats een blok met het
+//   Feedback-formulier op de voorpagina.
 // - Vergelijk de HTML van het contactformulier met de HTML van de het
 //   origineel en pas waar nodig de HTML van de Block-template aan.
 

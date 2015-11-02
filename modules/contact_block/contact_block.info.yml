@@ -1,6 +1,0 @@
-name: Contact Block
-type: module
-description: 'A block for contact forms.'
-package: Wizzlern
-version: 8.x-1.0
-core: 8.x
