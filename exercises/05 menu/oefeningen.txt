@@ -1,0 +1,20 @@
+Oefeningen voor weergave van het menu.
+Geschatte tijd: 30 min.
+
+==== Stap 1 ====
+Voeg een hoofdmenu aan de pagina toe.
+- Controleer of een region is aangemaakt voor het hoofdmenu.
+- Plaats het 'main naviation'-blok om het menu aan de pagina toe te voegen.
+- Voeg zo nodig menu-items aan het menu toe.
+- Controleer het resultaat.
+
+==== Stap 2 ====
+Geef het menu de juiste opmaak.
+- Onderzoek welke HTML en css-klassen in de bron voorkomen en welke in Drupal 8
+  output.
+- Schakel zo nodig twig debugging in. Zie hiervoor sites/*/services.yml.
+- Bepaal welke template-output aangepast moet worden. Gebruik eventueel een
+  aangepaste template naam.
+- Maak de gekozen template en pas de inhoud aan zodat de html en CSS met het
+  origineel overeenkomt.
+- Controleer het resultaat.

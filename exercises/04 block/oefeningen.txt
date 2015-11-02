@@ -1,0 +1,20 @@
+Oefeningen voor themen van een blok.
+Geschatte tijd: 30 min.
+
+==== Stap 1 ====
+Maak een blok met statische inhoud voor de footer.
+- Maak een standaardblok en opieer daarin inhoud van de footer uit het
+  index.html bronbestand.
+- Plaats het blok in de footer-region.
+- Controleer het resultaat.
+
+==== Stap 2 ====
+Maak de markup-aanpassingen voor de juiste opmaak.
+- Onderzoek welke HTML en css-klassen in de bron voorkomen en welke in Drupal 8
+  output.
+- Schakel twig debugging in. Zie hiervoor sites/*/services.yml.
+- Kijk welke alternatieve twig template-namen voor het blok beschikbaar zijn en
+  kies een geschikte.
+- Kopieer het block.html.twig-bestand uit de block-module of uit een
+  basistemplate en geef dit de gekozen template-naam.
+- Pas de inhoud van de template aan zodat de html met het origineel overeenkomt.

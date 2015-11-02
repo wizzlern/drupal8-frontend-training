@@ -1,0 +1,6 @@
+.toolbar-horizontal .navbar-fixed-top {
+  margin-top: 39px;
+}
+.toolbar-horizontal.toolbar-tray-open .navbar-fixed-top {
+  margin-top: 77px;
+}

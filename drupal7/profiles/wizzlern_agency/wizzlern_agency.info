@@ -1,0 +1,29 @@
+name = Drupal 7 Agency Install Profile
+description = "Install Profile for Wizzlern's Front-end Development training in which a Drupal 7 theme is upgraded to Drupal 8."
+version = 7.x-1.x-dev
+core = 7.x
+
+; Core modules
+dependencies[] = block
+dependencies[] = comment
+dependencies[] = contextual
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = number
+dependencies[] = options
+dependencies[] = dblog
+dependencies[] = shortcut
+dependencies[] = toolbar
+dependencies[] = field_ui
+dependencies[] = file
+
+; Contrib modules
+;dependencies[] = devel
+;dependencies[] = devel_themer
+dependencies[] = features
+dependencies[] = strongarm
+
+; Features
+dependencies[] = feature_wizzlern_agency
+; The module wizzlern_agency_content is enabled during installation.

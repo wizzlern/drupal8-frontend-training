@@ -1,0 +1,70 @@
+<?php
+
+/**
+ * @file
+ * Installation scripts for Wizzlern Agency Theme content.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function wizzlern_agency_content_install() {
+
+  // Disable system blocks.
+  wizzlern_agency_content_disable_block('system', 'help');
+
+  // Create menu links.
+  $links = array(
+    array(
+      'link_title' => 'Services',
+      'link_path' => '<front>',
+      'options' => array (
+        'fragment' => 'services',
+      ),
+    ),
+    array(
+      'link_title' => 'Portfolio',
+      'link_path' => '<front>',
+      'options' => array (
+        'fragment' => 'portfolio',
+      ),
+    ),
+    array(
+      'link_title' => 'About',
+      'link_path' => '<front>',
+      'options' => array (
+        'fragment' => 'about',
+      ),
+    ),
+    array(
+      'link_title' => 'Team',
+      'link_path' => '<front>',
+      'options' => array (
+        'fragment' => 'team',
+      ),
+    ),
+    array(
+      'link_title' => 'Contact',
+      'link_path' => '<front>',
+      'options' => array (
+        'fragment' => 'contact',
+      ),
+    ),
+  );
+
+  foreach ($links as $weight => $item) {
+    $item += array(
+      'menu_name' => 'main-menu',
+      'weight' => $weight,
+      'parent' => 'main-menu:0',
+      'description' => '',
+    );
+    menu_link_save($item);
+  }
+
+  // Create nodes and files using content in the content and files directory
+  // of this module.
+  $files = wizzlern_agency_content_create_files('files');
+  wizzlern_agency_content_create_nodes('content', $files, 'node.php');
+
+}

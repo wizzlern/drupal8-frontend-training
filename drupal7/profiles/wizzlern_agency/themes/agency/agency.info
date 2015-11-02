@@ -1,0 +1,32 @@
+name = Agency
+description = A clean, stylish, one page Bootstrap portfolio theme perfect for your agency or small business. Based the <a href="http://startbootstrap.com/template-overviews/agency/">Agency theme by startbootstrap.com</a>.
+version = 7.x-1.0
+core = 7.x
+
+stylesheets[all][] = css/bootstrap.min.css
+stylesheets[all][] = css/agency.css
+stylesheets[all][] = css/drupal-agency.css
+stylesheets[all][] = font-awesome/css/font-awesome.min.css
+
+# Prevent some default css from being loaded.
+# Note: This is a fairly random set of style sheets, only used here to
+# demonstrate how to prevent default style sheets from being loaded.
+stylesheets[all][] = comment/comment.css
+stylesheets[all][] = field/theme/field.css
+stylesheets[all][] = node/node.css
+stylesheets[all][] = search/search.css
+stylesheets[all][] = user/user.css
+stylesheets[all][] = views/css/views.css
+stylesheets[all][] = ctools/css/ctools.css
+
+scripts[] = js/bootstrap.min.js
+scripts[] = js/classie.js
+scripts[] = js/cbpAnimatedHeader.min.js
+scripts[] = js/jqBootstrapValidation.js
+scripts[] = js/agency.js
+scripts[] = js/drupal_agency.js
+
+regions[primary_menu] = Primary menu
+regions[help] = Help
+regions[content] = Content
+regions[footer] = Footer

@@ -1,0 +1,104 @@
+<?php
+/**
+ * @file
+ * Install, update and uninstall functions for the Wizzlern Drupal front-end
+ * training installation profile.
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site for this profile.
+ *
+ * @see system_install()
+ */
+function wizzlern_agency_install() {
+
+  // Enable some standard blocks.
+  $default_theme = variable_get('theme_default', 'bartik');
+  $admin_theme = 'seven';
+  $blocks = array(
+    array(
+      'module' => 'system',
+      'delta' => 'main',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'content',
+      'pages' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'system',
+      'delta' => 'main',
+      'theme' => $admin_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'content',
+      'pages' => '',
+      'cache' => -1,
+    ),
+  );
+  $query = db_insert('block')->fields(array('module', 'delta', 'theme', 'status', 'weight', 'region', 'pages', 'cache'));
+  foreach ($blocks as $block) {
+    $query->values($block);
+  }
+  $query->execute();
+}
+
+/**
+ * Implements hook_install_tasks().
+ */
+function wizzlern_agency_install_tasks() {
+  // Make sure we have at least 64M of memory.
+  if (ini_get('memory_limit') != '-1' && ini_get('memory_limit') < '64M') {
+    ini_set('memory_limit', '64M');
+  }
+
+  return array(
+    'wizzlern_agency_revert_features' => array(
+      'display' => FALSE,
+    ),
+    'wizzlern_agency_users' => array(
+      'display' => FALSE,
+    ),
+    'wizzlern_agency_content' => array(
+      'display' => FALSE,
+    ),
+  );
+}
+
+/*
+ * Install task callback: Revert Features after the installation.
+ */
+function wizzlern_agency_revert_features() {
+
+  // Revert Features components to ensure that they are in their default states.
+  $revert = array(
+    'feature_wizzlern_agency' => array('variable'),
+  );
+
+  features_revert($revert);
+}
+
+/*
+ * Install task callback: Update users.
+ */
+function wizzlern_agency_users() {
+
+  // Assign user 1 the "administrator" role.
+  $role = user_role_load_by_name('administrator');
+  $user = user_load(1);
+  $fields = array(
+    'roles' => array($role->rid => $role->name),
+  );
+  user_save($user, $fields);
+}
+
+/*
+ * Install task callback: Add content.
+ */
+function wizzlern_agency_content() {
+
+  module_enable(array('wizzlern_agency_content'));
+}

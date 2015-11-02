@@ -1,0 +1,14 @@
+#
+# Oefeningen voor het .info.yml-bestand voor het Wizzlern Agency thema.
+# Geschatte tijd: 10 min.
+#
+
+# ==== Stap 1 ====
+# Vul de informatie aan zodat het thema op de overzichtspagina wordt
+# weergegeven.
+# - Zoek voorbeelden van .info.yml bestanden in core thema's.
+# - Bekijk de documentatie op https://www.drupal.org/node/2349827
+# - Vul de onderstaande data aan.
+name: Wizzlern Agency
+type: theme
+...
