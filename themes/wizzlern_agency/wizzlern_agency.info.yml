@@ -6,8 +6,7 @@ version: 8.x-1.0
 core: 8.x
 
 libraries:
-  - wizzlern_agency/global-styling
-  - wizzlern_agency/global-scripts
+  - wizzlern_agency/global
 
 regions:
   primary_menu: 'Primary menu'
@@ -21,3 +20,6 @@ regions_hidden:
   - page_top
   - page_bottom
   - sidebar_first
+
+stylesheets-remove:
+  - core/modules/system/css/components/tree-child.module.css

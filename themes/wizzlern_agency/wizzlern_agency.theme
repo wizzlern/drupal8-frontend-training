@@ -2,13 +2,13 @@
 
 /**
  * @file
- * Functions to support theming in the Wizzlern Agency theme.
+ * Preprocess hooks and other theme functions for the Wizzlern Agency theme.
  */
 
 use Drupal\views\ViewExecutable;
 
 /**
- * Implements hook_preprocess_HOOK() for HTML document templates.
+ * Implements hook_preprocess_html().
  */
 function wizzlern_agency_preprocess_html(&$variables) {
   // Adds: <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,12 +24,13 @@ function wizzlern_agency_preprocess_html(&$variables) {
 }
 
 /**
- * Implements hook_preprocess_HOOK() for page.html.twig.
+ * Implements hook_page_attachments_alter().
  */
-function wizzlern_agency_preprocess_page(&$variables) {
+function wizzlern_agency_page_attachments_alter(array &$attachments) {
   // Add library only for authenticated users.
-  if ($variables['logged_in']) {
-    $variables['#attached']['library'][] = 'agency/authenticated';
+  $logged_in = \Drupal::currentUser()->isAuthenticated();
+  if ($logged_in) {
+    $attachments['#attached']['library'][] = 'wizzlern_agency/authenticated';
   }
 }
 
@@ -71,7 +72,7 @@ function wizzlern_agency_views_post_render(ViewExecutable $view, &$output, $cach
 /**
  * Implements hook_form_FORM_ID_alter().
  *
- * Modify the contact form to suite our design.
+ * Modify the contact form to match our design.
  */
 function wizzlern_agency_form_contact_message_feedback_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
 
@@ -102,13 +103,13 @@ function wizzlern_agency_form_contact_message_feedback_form_alter(&$form, \Drupa
  */
 function wizzlern_agency_preprocess_input(&$variables) {
 
-  $input_elements = array(
+  $supported_types = array(
     'text',
     'email',
   );
 
   // Set attributes and classes for text type input field.
-  if (in_array($variables['attributes']['type'], $input_elements)) {
+  if (in_array($variables['attributes']['type'], $supported_types)) {
     _wizzlern_agency_modify_input_elements($variables);
   }
 }
