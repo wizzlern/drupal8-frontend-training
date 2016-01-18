@@ -1,11 +1,20 @@
 /**
  * @file
  */
-(function ($) {
+(function ($, Drupal, drupalSettings) {
 
-  // Add classes to team member images to make them round and reponsive.
+  'use strict';
+
+  /**
+   * Adds classes to front page images to make them round and responsive.
+   *
+   * @type {Drupal~behavior}
+   *
+   * @prop {Drupal~behaviorAttach} attach
+   *   Attaches behaviour to add classes to front page images.
+   */
   Drupal.behaviors.agencyImageClasses = {
-    attach: function (context) {
+    attach: function () {
 
       $('#team').find('.team-member').find('img').each(function() {
         $(this).addClass('img-responsive').addClass('img-circle');
@@ -22,4 +31,4 @@
     }
   };
 
-})(jQuery);
+})(jQuery, Drupal, drupalSettings);
