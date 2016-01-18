@@ -20,6 +20,7 @@ global:
     "http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js": { minified: true, type: external }
     "https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js": { browsers: { IE: 'lt IE 9', !IE: false }, minified: true, type: external }
   dependencies:
+    - core/drupal
     - core/jquery
 
 authenticated:
