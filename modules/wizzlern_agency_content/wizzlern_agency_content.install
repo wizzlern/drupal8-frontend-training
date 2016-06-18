@@ -41,31 +41,31 @@ function wizzlern_agency_content_install() {
 
   // Create menu-items in the main menu.
   $links[] = array(
-    'link' => 'internal:#services',
+    'link' => 'internal:/#services',
     'title' => 'Services',
     'menu_name' => 'main',
     'weight' => '1',
   );
   $links[] = array(
-    'link' => 'internal:#portfolio',
+    'link' => 'internal:/#portfolio',
     'title' => 'Portfolio',
     'menu_name' => 'main',
     'weight' => '2',
   );
   $links[] = array(
-    'link' => 'internal:#about',
+    'link' => 'internal:/#about',
     'title' => 'About',
     'menu_name' => 'main',
     'weight' => '3',
   );
   $links[] = array(
-    'link' => 'internal:#team',
+    'link' => 'internal:/#team',
     'title' => 'Team',
     'menu_name' => 'main',
     'weight' => '4',
   );
   $links[] = array(
-    'link' => 'internal:#contact',
+    'link' => 'internal:/#contact',
     'title' => 'Contact',
     'menu_name' => 'main',
     'weight' => '5',

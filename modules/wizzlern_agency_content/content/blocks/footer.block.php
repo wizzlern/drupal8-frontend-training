@@ -38,7 +38,7 @@ $blocks[] = array(
     ),
   ),
   'instance' => array(
-    'id' => 'wizzlern_agency_footer',
+    'id' => 'wizzlern_agency_agency_footer',
     'region' => 'footer',
     'theme' => 'wizzlern_agency',
     'weight' => 0,
