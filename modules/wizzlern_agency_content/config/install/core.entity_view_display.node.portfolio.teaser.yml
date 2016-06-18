@@ -3,7 +3,11 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.portfolio.body
     - field.field.node.portfolio.field__subtitle
+    - field.field.node.portfolio.field_portfolio_category
+    - field.field.node.portfolio.field_portfolio_client
+    - field.field.node.portfolio.field_portfolio_date
     - field.field.node.portfolio.field_portfolio_screenshot
     - node.type.portfolio
   module:
@@ -19,4 +23,7 @@ hidden:
   body: true
   field__font: true
   field__subtitle: true
+  field_portfolio_category: true
+  field_portfolio_client: true
+  field_portfolio_date: true
   field_portfolio_screenshot: true

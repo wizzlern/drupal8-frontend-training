@@ -6,7 +6,7 @@ dependencies:
 third_party_settings:
   menu_ui:
     available_menus: {  }
-    parent: 'main:'
+    parent: ''
 name: Portfolio
 type: portfolio
 description: 'A portfolio item.'
