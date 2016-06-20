@@ -2,15 +2,16 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.body
-    - field.storage.node.field__font
-    - node.type.service
+    - field.storage.node.field__subtitle
+    - field.storage.node.field_portfolio_screenshot
+    - image.style.portfolio_front
+    - node.type.portfolio
   module:
+    - image
     - node
-    - text
     - user
-id: services_front
-label: 'Services frontpage'
+id: portfolio_frontpage
+label: 'Portfolio frontpage'
 module: views
 description: ''
 tag: frontpage
@@ -58,7 +59,7 @@ display:
         type: default
         options:
           grouping: {  }
-          row_class: col-md-4
+          row_class: 'col-md-4 col-sm-6 portfolio-item'
           default_row_class: false
       row:
         type: fields
@@ -68,77 +69,15 @@ display:
           separator: ''
           hide_empty: false
       fields:
-        field__font:
-          id: field__font
-          table: node__field__font
-          field: field__font
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: null
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: text_default
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
         title:
           id: title
           table: node_field_data
           field: title
           relationship: none
           group_type: group
-          admin_label: ''
+          admin_label: 'Hidden: Title'
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -166,14 +105,14 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: h4
+          element_type: ''
           element_class: ''
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -196,10 +135,73 @@ display:
           entity_type: node
           entity_field: title
           plugin_id: node
-        body:
-          id: body
-          table: node__body
-          field: body
+        field__subtitle:
+          id: field__subtitle
+          table: node__field__subtitle
+          field: field__subtitle
+          relationship: none
+          group_type: group
+          admin_label: 'Hidden: Subtitle'
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: null
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_portfolio_screenshot:
+          id: field_portfolio_screenshot
+          table: node__field_portfolio_screenshot
+          field: field_portfolio_screenshot
           relationship: none
           group_type: group
           admin_label: ''
@@ -239,15 +241,17 @@ display:
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
-          type: text_default
-          settings: {  }
-          group_column: value
+          click_sort_column: target_id
+          type: image
+          settings:
+            image_style: portfolio_front
+            image_link: content
+          group_column: ''
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -258,6 +262,55 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        nothing:
+          id: nothing
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: 'Custom: Portfolio caption'
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: "<div class=\"portfolio-caption\">\n  <h4>{{ title }}</h4>\n  <p class=\"text-muted\">{{ field__subtitle }}</p>\n</div>"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: null
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+          plugin_id: custom
       filters:
         status:
           value: true
@@ -272,14 +325,14 @@ display:
           group: 1
         type:
           id: type
-          table: node
+          table: node_field_data
           field: type
           relationship: none
           group_type: group
           admin_label: ''
           operator: in
           value:
-            service: service
+            portfolio: portfolio
           group: 1
           exposed: false
           expose:
@@ -326,7 +379,7 @@ display:
           expose:
             label: ''
           granularity: second
-      title: Services
+      title: Portfolio
       header: {  }
       footer: {  }
       empty: {  }
@@ -335,6 +388,10 @@ display:
       display_extenders: {  }
       field_langcode: '***LANGUAGE_language_content***'
       field_langcode_add_to_query: null
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       max-age: -1
       contexts:
@@ -343,8 +400,8 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.body'
-        - 'config:field.storage.node.field__font'
+        - 'config:field.storage.node.field__subtitle'
+        - 'config:field.storage.node.field_portfolio_screenshot'
   block_front:
     display_plugin: block
     id: block_front
@@ -362,5 +419,5 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.body'
-        - 'config:field.storage.node.field__font'
+        - 'config:field.storage.node.field__subtitle'
+        - 'config:field.storage.node.field_portfolio_screenshot'

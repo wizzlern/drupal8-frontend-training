@@ -2,20 +2,21 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field__font
+    - field.storage.node.body
     - field.storage.node.field__subtitle
-    - field.storage.node.field_team_image
-    - node.type.team
+    - field.storage.node.field_about_image
+    - image.style.about_round
+    - node.type.about
   module:
     - image
     - node
     - text
     - user
-id: team_frontpage
-label: 'Team frontpage'
+id: about_frontpage
+label: 'About frontpage'
 module: views
 description: ''
-tag: ''
+tag: frontpage
 base_table: node_field_data
 base_field: nid
 core: 8.x
@@ -31,7 +32,7 @@ display:
         options:
           perm: 'access content'
       cache:
-        type: tag
+        type: none
         options: {  }
       query:
         type: views_query
@@ -54,14 +55,17 @@ display:
       pager:
         type: none
         options:
-          items_per_page: 0
+          items_per_page: null
           offset: 0
       style:
-        type: default
+        type: html_list
         options:
           grouping: {  }
           row_class: ''
           default_row_class: false
+          type: ul
+          wrapper_class: col-lg-12
+          class: timeline
       row:
         type: fields
         options:
@@ -70,10 +74,10 @@ display:
           separator: ''
           hide_empty: false
       fields:
-        field_team_image:
-          id: field_team_image
-          table: node__field_team_image
-          field: field_team_image
+        field__subtitle:
+          id: field__subtitle
+          table: node__field__subtitle
+          field: field__subtitle
           relationship: none
           group_type: group
           admin_label: ''
@@ -96,7 +100,7 @@ display:
             suffix: ''
             target: ''
             nl2br: false
-            max_length: 0
+            max_length: null
             word_boundary: true
             ellipsis: true
             more_link: false
@@ -106,24 +110,23 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: div
-          element_class: 'img-responsive img-circle'
+          element_type: ''
+          element_class: ''
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: false
+          element_default_classes: true
           empty: ''
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: image
+          click_sort_column: value
+          type: string
           settings:
-            image_style: ''
-            image_link: ''
-          group_column: ''
+            link_to_entity: false
+          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -160,9 +163,9 @@ display:
             suffix: ''
             target: ''
             nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
+            max_length: null
+            word_boundary: false
+            ellipsis: false
             more_link: false
             more_link_text: ''
             more_link_path: ''
@@ -170,7 +173,7 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
+          element_type: h4
           element_class: ''
           element_label_type: ''
           element_label_class: ''
@@ -185,7 +188,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: false
+            link_to_entity: 0
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -195,12 +198,15 @@ display:
           delta_first_last: false
           multi_type: separator
           separator: ', '
-          field_api_classes: false
-          plugin_id: field
-        field__subtitle:
-          id: field__subtitle
-          table: node__field__subtitle
-          field: field__subtitle
+          field_api_classes: 0
+          link_to_node: false
+          entity_type: node
+          entity_field: title
+          plugin_id: node
+        body:
+          id: body
+          table: node__body
+          field: body
           relationship: none
           group_type: group
           admin_label: ''
@@ -223,70 +229,7 @@ display:
             suffix: ''
             target: ''
             nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-        field__font:
-          id: field__font
-          table: node__field__font
-          field: field__font
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
+            max_length: null
             word_boundary: true
             ellipsis: true
             more_link: false
@@ -322,18 +265,18 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        nothing:
-          id: nothing
-          table: views
-          field: nothing
+        field_about_image:
+          id: field_about_image
+          table: node__field_about_image
+          field: field_about_image
           relationship: none
           group_type: group
           admin_label: ''
           label: ''
           exclude: false
           alter:
-            alter_text: true
-            text: "<div class=\"col-sm-4\">\n  <div class=\"team-member\">\n    {{ field_team_image }}\n    <h4>{{ title }}</h4>\n    <p class=\"text-muted\">{{ field__subtitle }}</p>\n    {{ field__font }}\n  </div>\n</div>\n\n"
+            alter_text: false
+            text: ''
             make_link: false
             path: ''
             absolute: false
@@ -348,7 +291,71 @@ display:
             suffix: ''
             target: ''
             nl2br: false
-            max_length: 0
+            max_length: null
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: div
+          element_class: timeline-image
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image
+          settings:
+            image_style: about_round
+            image_link: ''
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        nothing:
+          id: nothing
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: "<div class=\"timeline-panel\">\n  <div class=\"timeline-heading\">\n    <h4>{{ field__subtitle }}</h4>\n    <h4 class=\"subheading\">{{ title }}</h4>\n  </div>\n  <div class=\"timeline-body text-muted\">\n    {{ body }}\n  </div>\n</div>"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: null
             word_boundary: true
             ellipsis: true
             more_link: false
@@ -387,8 +394,39 @@ display:
           id: type
           table: node_field_data
           field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
           value:
-            team: team
+            about: about
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
           entity_type: node
           entity_field: type
           plugin_id: bundle
@@ -408,13 +446,15 @@ display:
           expose:
             label: ''
           granularity: second
-      title: 'Team frontpage'
+      title: About
       header: {  }
       footer: {  }
       empty: {  }
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
+      field_langcode: '***LANGUAGE_language_content***'
+      field_langcode_add_to_query: null
     cache_metadata:
       max-age: -1
       contexts:
@@ -423,9 +463,9 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field__font'
+        - 'config:field.storage.node.body'
         - 'config:field.storage.node.field__subtitle'
-        - 'config:field.storage.node.field_team_image'
+        - 'config:field.storage.node.field_about_image'
   block_front:
     display_plugin: block
     id: block_front
@@ -433,6 +473,8 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
+      field_langcode: '***LANGUAGE_language_content***'
+      field_langcode_add_to_query: null
     cache_metadata:
       max-age: -1
       contexts:
@@ -441,6 +483,6 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field__font'
+        - 'config:field.storage.node.body'
         - 'config:field.storage.node.field__subtitle'
-        - 'config:field.storage.node.field_team_image'
+        - 'config:field.storage.node.field_about_image'

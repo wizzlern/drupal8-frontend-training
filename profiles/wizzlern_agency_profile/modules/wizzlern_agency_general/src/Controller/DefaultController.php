@@ -2,17 +2,15 @@
 
 /**
  * @file
- * Contains Drupal\wizzlern_agency_content\Controller\DefaultController.
+ * Contains Drupal\wizzlern_agency_general\Controller\DefaultController.
  */
 
-namespace Drupal\wizzlern_agency_content\Controller;
+namespace Drupal\wizzlern_agency_general\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 
 /**
  * Class DefaultController.
- *
- * @package Drupal\wizzlern_agency_content\Controller
  */
 class DefaultController extends ControllerBase {
 

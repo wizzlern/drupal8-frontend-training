@@ -1,0 +1,7 @@
+wizzlern_agency_general.front:
+  path: '/front'
+  defaults:
+    _controller: '\Drupal\wizzlern_agency_general\Controller\DefaultController::dummyPage'
+    _title: ''
+  requirements:
+    _permission: 'access content'

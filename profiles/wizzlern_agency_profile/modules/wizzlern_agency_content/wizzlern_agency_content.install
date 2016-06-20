@@ -74,11 +74,4 @@ function wizzlern_agency_content_install() {
   foreach ($links as $link) {
     wizzlern_agency_content_add_menu_link($link);
   }
-
-  // Disable the Home link.
-  /** @var \Drupal\Core\Menu\MenuLinkManager $manager */
-  $manager = \Drupal::getContainer()->get('plugin.manager.menu.link');
-  $home_link = $manager->getDefinition('standard.front_page');
-  $home_link['enabled'] = 0;
-  $manager->updateDefinition('standard.front_page', $home_link);
 }

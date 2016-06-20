@@ -1,0 +1,39 @@
+name: Wizzlern Agency Profile
+type: profile
+description: 'Install with commonly used features pre-configured.'
+version: VERSION
+core: 8.x
+dependencies:
+  - node
+  - block
+  - ckeditor
+  - config
+  - contextual
+  - contact
+  - menu_link_content
+  - block_content
+  - quickedit
+  - editor
+  - image
+  - menu_ui
+  - options
+  - path
+  - page_cache
+  - dynamic_page_cache
+  - taxonomy
+  - dblog
+  - shortcut
+  - toolbar
+  - field_ui
+  - file
+  - views
+  - views_ui
+  - ctools
+  - token
+  - contact_block
+  - entity_reference
+  - ng_lightbox
+  - wizzlern_agency_general
+themes:
+  - bartik
+  - seven

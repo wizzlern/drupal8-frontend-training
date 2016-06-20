@@ -126,7 +126,9 @@ function wizzlern_agency_content_create_blocks($dir, $extension) {
 function wizzlern_agency_content_disable_block($id) {
   /** @var \Drupal\block\Entity\Block $block */
   $block = Drupal::entityManager()->getStorage('block')->load($id);
-  $block->disable()->save();
+  if ($block) {
+    $block->disable()->save();
+  }
   return;
 }
 
