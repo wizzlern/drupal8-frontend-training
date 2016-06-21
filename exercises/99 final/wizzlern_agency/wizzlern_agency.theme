@@ -5,6 +5,7 @@
  * Preprocess hooks and other theme functions for the Wizzlern Agency theme.
  */
 
+use Drupal\Core\Template\Attribute;
 use Drupal\views\ViewExecutable;
 
 
@@ -142,7 +143,10 @@ function wizzlern_agency_preprocess_image_formatter(&$variables) {
     if ($lightbox->isNgLightboxEnabledPath($variables['url'])) {
       $link = [];
       $lightbox->addLightbox($link);
-      $variables['link_attributes'] = $link['options']['attributes'];
+      $variables['link_attributes'] = new Attribute();
+      foreach ($link['options']['attributes'] as $attribute => $value) {
+        $variables['link_attributes']->setAttribute($attribute, $value);
+      }
     }
   }
 }
