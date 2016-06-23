@@ -20,6 +20,7 @@ function wizzlern_agency_theme_suggestions_image_formatter_alter(array &$suggest
  * Implements hook_preprocess_html().
  */
 function wizzlern_agency_preprocess_html(&$variables) {
+
   // Adds: <meta http-equiv="X-UA-Compatible" content="IE=edge">
   $variables['head']['X-UA-Compatible'] = array (
     '#type' => 'html_tag',
@@ -29,13 +30,13 @@ function wizzlern_agency_preprocess_html(&$variables) {
       'content' => 'IE=edge',
     ),
   );
-
 }
 
 /**
  * Implements hook_page_attachments_alter().
  */
 function wizzlern_agency_page_attachments_alter(array &$attachments) {
+
   // Add library only for authenticated users.
   $logged_in = \Drupal::currentUser()->isAuthenticated();
   if ($logged_in) {
@@ -62,6 +63,17 @@ function wizzlern_agency_js_alter(&$javascripts) {
     if (in_array($key, $footer_scripts)) {
       $javascripts[$key]['scope'] = 'footer';
     }
+  }
+}
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function wizzlern_agency_preprocess_menu(&$variables) {
+
+  // Add site name to main menu block.
+  if ($variables['menu_name' == 'main']) {
+    $variables['site_name'] = \Drupal::config('system.site')->get('name');
   }
 }
 
