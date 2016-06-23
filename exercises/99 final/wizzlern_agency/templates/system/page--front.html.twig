@@ -21,15 +21,7 @@
 
   <!-- Header -->
   <header>
-    <div class="container">
-      <div class="intro-text">
-        {{ title_prefix }}
-        <div class="intro-lead-in">{{ title }}</div>
-        {{ title_suffix }}
-        <div class="intro-heading">{{ site_slogan }}</div>
-        <a href="#services" class="page-scroll btn btn-xl">{{ 'Tell Me More'|t }}</a>
-      </div>
-    </div>
+    {{ page.header }}
   </header>
 
   {{ messages }}
