@@ -10,7 +10,7 @@ dependencies:
 id: mainnavigation
 theme: wizzlern_agency
 region: primary_menu
-weight: -10
+weight: -4
 provider: null
 plugin: 'system_menu_block:main'
 settings:

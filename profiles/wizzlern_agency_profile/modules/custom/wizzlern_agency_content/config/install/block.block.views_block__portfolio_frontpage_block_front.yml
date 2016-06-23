@@ -11,7 +11,7 @@ dependencies:
 id: views_block__portfolio_frontpage_block_front
 theme: wizzlern_agency
 region: content
-weight: -8
+weight: -2
 provider: null
 plugin: 'views_block:portfolio_frontpage-block_front'
 settings:

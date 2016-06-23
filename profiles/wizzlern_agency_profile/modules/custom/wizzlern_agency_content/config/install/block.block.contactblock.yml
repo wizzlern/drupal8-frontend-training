@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies:
+  config:
+    - contact.form.feedback
   module:
     - contact_block
     - system
@@ -9,7 +11,7 @@ dependencies:
 id: contactblock
 theme: wizzlern_agency
 region: content
-weight: null
+weight: 1
 provider: null
 plugin: contact_block
 settings:
