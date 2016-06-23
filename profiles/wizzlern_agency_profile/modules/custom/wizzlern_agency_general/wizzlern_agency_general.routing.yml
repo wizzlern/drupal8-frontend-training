@@ -2,6 +2,6 @@ wizzlern_agency_general.front:
   path: '/front'
   defaults:
     _controller: '\Drupal\wizzlern_agency_general\Controller\DefaultController::dummyPage'
-    _title: ''
+    _title: 'Welcome To Our Studio!'
   requirements:
     _permission: 'access content'
