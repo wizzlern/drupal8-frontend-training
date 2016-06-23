@@ -72,7 +72,7 @@ function wizzlern_agency_js_alter(&$javascripts) {
 function wizzlern_agency_preprocess_menu(&$variables) {
 
   // Add site name to main menu block.
-  if ($variables['menu_name' == 'main']) {
+  if ($variables['menu_name'] == 'main') {
     $variables['site_name'] = \Drupal::config('system.site')->get('name');
   }
 }
