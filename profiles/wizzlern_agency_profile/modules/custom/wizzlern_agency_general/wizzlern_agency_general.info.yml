@@ -1,6 +1,6 @@
-name: Wizzlern Agency Content
+name: Wizzlern Agency General
 type: module
-description: 'Provides configuration and content for the Wizzlern Agency theme.'
+description: 'Provides configuration for the Wizzlern Agency theme.'
 package: Wizzlern
 version: 8.x-1.x
 core: 8.x

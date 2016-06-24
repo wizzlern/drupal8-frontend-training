@@ -408,7 +408,7 @@ display:
           expose:
             label: ''
           granularity: second
-      title: 'Team frontpage'
+      title: 'Team'
       header: {  }
       footer: {  }
       empty: {  }
