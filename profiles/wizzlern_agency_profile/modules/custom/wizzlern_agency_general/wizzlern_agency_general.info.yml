@@ -1,6 +1,6 @@
 name: Wizzlern Agency General
 type: module
-description: 'Provides configuration for the Wizzlern Agency theme.'
+description: 'General helper module for the Wizzlern Agency installation profile.'
 package: Wizzlern
 version: 8.x-1.x
 core: 8.x
