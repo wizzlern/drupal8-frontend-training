@@ -13,15 +13,8 @@ regions:
   primary_menu: 'Primary menu'
   header: 'Header'
   help: 'Help'
-  page_top: 'Page top'
-  page_bottom: 'Page bottom'
   content: 'Content'
-  sidebar_first: 'First sidebar'
   footer: 'Footer'
-regions_hidden:
-  - page_top
-  - page_bottom
-  - sidebar_first
 
 stylesheets-remove:
   - core/modules/system/css/components/tree-child.module.css
