@@ -4,27 +4,60 @@
 #
 
 # ==== Stap 1 ====
-# Maak een library met locale CSS- en JS-bestanden.
+# Maak een library met locale CSS-bestanden.
 # - Zoek in core-thema's voorbeelden van .libraries.yml bestanden.
-# - Kopieer de CSS- en JS-bestanden van het Agency thema naar de juiste mappen
-#   in het het wizzlern_agency thema. Kopieer ook andere styling-gerelateerde
-#   bestanden zoals afbeeldingen en fonts.
-# - Maak een library aan voor css en style sheets die op alle pagina's geladen
-#   moeten worden.
-# - Voeg de CSS-bestanden die in de css-map staan aan deze library toe.
-# - Voeg de JavaScript-bestanden die in de js-map staan aan deze library toe.
-# - Voeg waar nodig de 'minifield'-optie aan de css- en js-definities toe.
+# - Kopieer de CSS-bestanden van het Agency thema naar de juiste mappen in het
+#   wizzlern_agency thema. Kopieer ook andere styling-gerelateerde bestanden
+#   zoals afbeeldingen en fonts. Ter controle vind je hieronder een lijst van
+#   benodigde CSS-bestanden.
+# - Voeg de style sheets die op alle pagina's geladen moeten worden aan de
+#   onderstaande library toe. Zorg er voor dat het drupal-agency.css bestand als
+#   laatste CSS-bestand wordt geladen.
+# - Voeg waar nodig de 'minifield'-optie aan de CSS-definities toe.
 # - Leeg de cache en controleer het resultaat.
 
+# ---- Puzzelstukken ----
+# Deze CSS-bestanden heb je nodig:
+# - bootstrap.min.css
+# - agency.css
+# - drupal-agency.css
+# - font-awesome.min.css
+
 # ==== Stap 2 ====
+# Voeg locale JS-bestanden aan de library toe.
+# - Kopieer de JS-bestanden van het Agency thema naar de juiste mappen in het
+#   wizzlern_agency thema. Ter controle vind je hieronder een lijst van
+#   benodigde JS-bestanden.
+# - We maken gebruik van Drupal's jQuery. Voeg deze toe door middel van een
+#   dependency.
+# - Voeg de JavaScript-bestanden uit de js-map staan aan deze library toe.
+# - Voeg waar nodig de 'minifield'-optie aan de JS-definities toe.
+# - Leeg de cache en controleer het resultaat.
+
+# ---- Puzzelstukken ----
+# Deze JS-bestanden heb je nodig:
+# - bootstrap.min.js
+# - classie.js
+# - cbpAnimatedHeader.js
+# - jqBootstrapValidation.js
+# - agency.js
+# - drupal-agency.js
+
+# ==== Stap 3 ====
 # Voeg externe CSS- en JS-bestanden aan de library toe.
 # - Zoek in de documentatie voorbeelden van het gebruik van externe CSS- en JS-
 #   bestanden in een library. https://www.drupal.org/theme-guide/8/assets
-# - Neem de externe bestanden over uit de broncode en voeg deze toe aan de
-#   library uit stap 1.
+# - Neem externe bestanden over uit "00 source/index.html" en voeg deze toe aan
+#   de library.
 # - Leeg de cache en controleer het resultaat.
 
-# ==== Stap 3 ====
+# ---- Puzzelstukken ----
+# Deze externe bestanden heb je nodig:
+# - fonts.googleapis.com/css 4 x
+# - jquery.easing.min.js
+# - respond.min.js
+
+# ==== Stap 4 ====
 # Voeg Browser-afhankelijke bestanden (bijv. voor IE) toe.
 # - Zoek in core-thema's voorbeelden van browser-afhankelijke CSS- en/of JS-
 #   bestanden.
@@ -32,42 +65,15 @@
 #   Neem de condities over en pas deze toe in de library.
 # - Leeg de cache en controleer het resultaat.
 
-# ==== Stap 4 (extra) ====
-# Verwijder ongewenste core-CSS.
+# ==== Stap 5 (extra) ====
+# Verwijder ongewenste Drupal CSS-bestanden.
 # - Onderzoek welke CSS en JS Drupal-core standaard toevoegt. Hiervoor kan je
 #   het 'Stable'-thema inschakelen.
 # - Onderdruk enkele van deze bestanden door gebruik van 'stylesheets-remove'.
 # - Leeg de cache en controleer het resultaat.
 
-global-styling:
+global:
   version: VERSION
   css:
-    theme:
-      css/bootstrap.min.css: { minified: true, every_page: true  }
-      css/agency.css: { every_page: true }
-      "css/drupal-agency.css": { every_page: true }
-      font-awesome/css/font-awesome.min.css: { minified: true, every_page: true }
-      "http://fonts.googleapis.com/css?family=Montserrat:400,700": { type: external }
-      "http://fonts.googleapis.com/css?family=Kaushan+Script": { type: external }
-      "http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic": { type: external }
-      "http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700": { type: external }
-
-global-scripts:
-  version: VERSION
   js:
-    js/bootstrap.min.js: {}
-    js/classie.js: {}
-    js/cbpAnimatedHeader.js: {}
-    js/jqBootstrapValidation.js: {}
-    js/agency.js: {}
-    js/drupal-agency.js: {}
-    "http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js": { minified: true, type: external }
-    "https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js": { browsers: { IE: 'lt IE 9', !IE: false }, minified: true, type: external }
   dependencies:
-    - core/jquery
-
-authenticated:
-  version: VERSION
-  css:
-    theme:
-      "css/agency-authenticated.css": {}

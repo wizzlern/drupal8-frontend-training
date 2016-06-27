@@ -1,0 +1,13 @@
+Oefeningen voor themen van een blok.
+Geschatte tijd: 30 min.
+
+==== Stap 1 ====
+Pas de markup van het footer-blok aan voor de juiste opmaak.
+- Onderzoek welke HTML en CSS-klassen in het bron-bestand voorkomen en welke in
+  de Drupal 8 output.
+- Schakel twig debugging in. Zie hiervoor sites/*/services.yml.
+- Kijk welke alternatieve twig template-namen voor het footer-blok beschikbaar
+  zijn en kies een geschikte.
+- Kopieer het block.html.twig-bestand uit het gekozen basisthema en geef dit de
+  gekozen template-naam.
+- Pas de inhoud van de template aan zodat de html met het origineel overeenkomt.

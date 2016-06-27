@@ -9,13 +9,17 @@
 // Geschatte tijd: 45 min.
 
 // ==== Oefening 1 ====
-// Gebruik een nieuwe library om css conditioneel te laden.
+// Gebruik een aparte library om CSS conditioneel te laden.
 // - Maak een tweede library aan die alleen geladen wordt voor ingelogde
 //   gebruikers.
-// - Verplaats het bestand agency-authenticated.css van de algemene library naar
-//   de nieuwe.
-// - Gebruik in de hook_page_attachments_alter() de '#attached' key om de
-//   library alleen te laden als de gebruiker is ingelogd.
+// - Laad het bestand agency-authenticated.css met behulp van deze library.
+// - Gebruik de onderstaande aanwijzingen om met de functie
+//   wizzlern_agency_page_attachments_alter() de library alleen te laden als de
+//   gebruiker is ingelogd.
+
+// ---- Aanwijzingen -----
+// - \Drupal::currentUser()->isAuthenticated()
+// - $attachments['#attached']['library'][]
 
 /**
  * Implements hook_page_attachments_alter().
@@ -24,24 +28,32 @@ function wizzlern_agency_page_attachments_alter(array &$attachments) {
 }
 
 // ==== Oefening 2 ====
-// Om schijnbare laadtijd te verkorten wordt JavaScript pas geladen als het hele
-// HTML-document is geladen.
+// Om schijnbare laadtijd te verkorten wordt JavaScript naar het einde van de
+// pagina verplaatst.
 // - Gebruik hook_js_alter() om het laden van JavaScript aan te passen.
 // - Zoek documentatie of voorbeelden van hook_js_alter().
-// - Implementeer hook_js_alter() en verplaats zoveel mogelijk JS-bestanden
-//   naar de footer.
+// - Gebruik de onderstaande aanwijzingen om in wizzlern_agency_js_alter()
+//   mogelijk JS-bestanden naar de footer te verplaatsen.
 // - Controleer of de JavaScript nog steeds werkt.
+
+// ---- Aanwijzingen ----
+// - $javascripts[$key]['scope'] = 'footer';
 
 /**
  * Implements hook_js_alter().
  */
+function wizzlern_agency_js_alter(&$javascripts) {
+}
 
 // ==== Stap 3 (extra) ====
-// Gebruik een hook om een meta-tag aan de html head toe te voegen:
-// <meta http-equiv="X-UA-Compatible" content="IE=edge">
-// - Welke preprocess functie kan gebruikt worden om meta tags aan de html head
-//   toe te voegen?
-// - In een preprocess functie bevindt output zich nog in een render array.
-// - Zoek voorbeelden van html tags in een render array.
-// - Implementeer de preprocess hook en voeg de bovenstaande meta tag aan iedere
-//   pagina toe.
+// Voeg een compatibility meta-tag aan de html head toe: <meta http-equiv="X-UA-Compatible" content="IE=edge">
+// - Gebruik een hook_preprocess_html() om meta tags aan de html head toe te
+//   voegen.
+// - Zoek toepassingen van deze hook_preprocess_html in Drupal core.
+// - Voeg de meta tag aan iedere pagina toe.
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function wizzlern_agency_preprocess_html(&$variables) {
+}

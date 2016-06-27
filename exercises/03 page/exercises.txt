@@ -1,0 +1,25 @@
+Oefeningen voor het migreren van de basis-layout van het thema.
+Geschatte tijd: 45 min.
+
+==== Stap 1 ====
+Gebruik de aangeleverde templates.
+- Kopieer het html.html.twig en page-front.html.twig bestanden naar je eigen
+  thema.
+- Leeg de cache.
+- Vergelijk de aangeleverde index.html met de huidige Drupal output.
+
+==== Stap 2 ====
+Voeg variabelen aan de page-template toe.
+- Voeg een twig variabele toe voor iedere region van het thema.
+- Voeg een twig variabele toe voor 'message' en voor 'tabs'.
+- Leeg de cache en controleer het resultaat.
+
+---- Puzzelstukken ----
+De onderstaande variabelen heb je in de page-template nodig:
+- {{ messages }}
+- {{ page.content }}
+- {{ page.footer }}
+- {{ page.header }}
+- {{ page.help }}
+- {{ page.primary_menu }}
+- {{ tabs }}

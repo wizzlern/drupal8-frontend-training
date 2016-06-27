@@ -9,6 +9,22 @@
 # - Zoek voorbeelden van .info.yml bestanden in core thema's.
 # - Bekijk de documentatie op https://www.drupal.org/node/2349827
 # - Vul de onderstaande data aan.
+
 name: Wizzlern Agency
 type: theme
 ...
+
+# ==== Stap 2 ====
+# Voeg regions aan het info.yml-bestand toe.
+# - Maak de volgende regions aan:
+#   - primary_menu
+#   - header
+#   - help
+#   - content
+#   - footer
+# - Schakel het thema in en controleer het resultaat.
+
+# ==== Stap 3 ====
+# Voeg inhoud aan de website toe
+# - Schakel de wizzlern_agency_content-module in.
+# - Bekijk de toegevoegde inhoud op de admin/content pagina en de voorpagina.

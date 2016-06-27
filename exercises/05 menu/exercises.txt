@@ -1,0 +1,13 @@
+Oefeningen voor weergave van het menu.
+Geschatte tijd: 30 min.
+
+==== Stap 1 ====
+Pas de markup van het hoofdmenu-blok aan voor de juiste opmaak.
+- Onderzoek welke HTML en CSS-klassen in het bron-bestand voorkomen en welke in
+  de Drupal 8 output.
+- Schakel zo nodig twig debugging in. Zie hiervoor sites/*/services.yml.
+- Bepaal welke template-output aangepast moet worden. Gebruik eventueel een
+  aangepaste template naam.
+- Maak het template-bestand aan en bewerkt de markup zodat de HTML en CSS met
+  het origineel overeenkomen.
+- Controleer het resultaat.
