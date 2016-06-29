@@ -32,7 +32,6 @@ dependencies:
   - token
   - contact_block
   - entity_reference
-  - ng_lightbox
   - wizzlern_agency_general
 themes:
   - bartik
