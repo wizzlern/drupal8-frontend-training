@@ -13,33 +13,16 @@
 // - Controleer het resultaat.
 
 // ==== (extra) Oefening 2 ====
-// Open de portfolio-nodes in een pop-up vanaf de voorpagina.
-// - Gebruik de ng_lightbox module om een node in een pop-up te openen.
-// - Met ng_lightbox kunnen (op dit moment) alleen bepaalde links in een pop-up
-//   worden geopend. De links in de Portfolio-view naar de node niet. Na
-//   onderzoek blijken de onderstaande Anchor-link attributen nodig te zijn om
-//   deze in een pop-up te openen. Voeg deze in de View aan de link toe.
-//     class="use-ajax" data-dialog-type="drupal_modal" data-dialog-options="{'width':700}"
+// Onderzoek de mogelijkheden om de markup niet in de Portfolio View naar in
+// een template te plaatsten.
+// - Welke template wordt voor de output van de View-row gebruikt.
+// - Hoe kan de template worden overschreven?
+// - Wat wordt de inhoud van deze template?
+// - Zijn er alternatieven?
 
-// TODO Portfolio View aanpassen zodat deze werkt zonder preprocess/template override.
-
-// ==== (extra) Oefening 3 ====
-// Verplaats de HTML van View naar een template.
-
-/**
- * Implements hook_form_FORM_ID_alter().
- *
- * Modify the contact form to match our design.
- */
-function wizzlern_agency_form_contact_message_feedback_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
-}
-
-* Template suggestion:
-  - Suggestion voor image_formatter per image_style.
-- Puzzelstuk: wizzlern_agency_preprocess_image_formatter()
-    Onderzoek: $variables['link_attributes'] = new Attribute();
-  - HTML-structuur van image_formatter
-* Node template override:
-  - Losse velden in custom structuur
-    Puzzelstuk: HTML-structuur van node in pop-up
-* Onderzoek mogelijkheid van View + node view-mode + node template override
+// ==== Oefening 3 ====
+// Gebruik een Portfolio node view-mode in de Portfolio Frontpage View.
+// - Definieer een Frontpage view-mode en richt deze in voor Portfolio.
+// - Pas de View aan zodat de view-mode wordt gebruikt.
+// - Maak een template met de juiste markup.
+// - Controleer het resultaat.
