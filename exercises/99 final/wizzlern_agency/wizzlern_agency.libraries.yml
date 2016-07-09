@@ -2,10 +2,10 @@ global:
   version: VERSION
   css:
     theme:
-      css/bootstrap.min.css: { minified: true, every_page: true  }
-      css/agency.css: { every_page: true }
-      "css/drupal-agency.css": { every_page: true }
-      font-awesome/css/font-awesome.min.css: { minified: true, every_page: true }
+      css/bootstrap.min.css: { minified: true  }
+      css/agency.css: { }
+      "css/drupal-agency.css": { }
+      font-awesome/css/font-awesome.min.css: { minified: true }
       "http://fonts.googleapis.com/css?family=Montserrat:400,700": { type: external }
       "http://fonts.googleapis.com/css?family=Kaushan+Script": { type: external }
       "http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic": { type: external }
